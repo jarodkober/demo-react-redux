@@ -10,7 +10,7 @@ module.exports = {
 		overlay: true,
 		stats: 'minimal'
 	},
-	devTool: 'cheap-module-source-map',
+	devtool: 'cheap-module-source-map',
 	entry: './src/index',
 	mode: 'development',
 	module: {
