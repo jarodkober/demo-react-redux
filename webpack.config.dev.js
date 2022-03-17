@@ -7,6 +7,7 @@ process.env.NODE_ENV = 'development';
 module.exports = {
 	devServer: {
 		historyApiFallback: true,
+		open: true,
 		overlay: true,
 		stats: 'minimal'
 	},
