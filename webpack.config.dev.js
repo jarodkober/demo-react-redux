@@ -36,6 +36,9 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			favicon: 'src/favicon.ico',
 			template: 'src/index.html'
+		}),
+		new webpack.DefinePlugin({
+			'process.env.API_URL': JSON.stringify('http://localhost:3001')
 		})
 	],
 	target: 'web'
