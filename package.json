@@ -86,6 +86,10 @@
 		"rules": {
 			"no-debugger": "off",
 			"no-console": "off",
+			"no-mixed-spaces-and-tabs": [
+				"error",
+				"smart-tabs"
+			],
 			"no-unused-vars": "warn",
 			"react/prop-types": "warn"
 		},
