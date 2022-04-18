@@ -9,6 +9,10 @@ export function createCourseSuccess(course) {
 	};
 }
 
+export function deleteCourseOptimistic(course) {
+	return { type: types.DELETE_COURSE_OPTIMISTIC, course };
+}
+
 export function loadCoursesSuccess(courses) {
 	return {
 		courses,
@@ -20,6 +24,15 @@ export function updateCourseSuccess(course) {
 	return {
 		course,
 		type: types.UPDATE_COURSE_SUCCESS
+	};
+}
+
+export function deleteCourse(course) {
+	return function (dispatch) {
+		// Performing an optimistic delete, so not dispatching begin/end API call
+		// actions, or apiCallError action since we're not showing the loading state for this.
+		dispatch(deleteCourseOptimistic(course));
+		return courseApi.deleteCourse(course.id);
 	};
 }
 
