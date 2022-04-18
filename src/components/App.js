@@ -2,6 +2,9 @@ import React from 'react';
 
 import { Route, Switch } from 'react-router-dom';
 
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import AboutPage from './about/AboutPage';
 import CoursesPage from './courses/CoursesPage';
 import Header from './common/Header';
@@ -37,6 +40,10 @@ function App() {
 				/>
 				<Route component={PageNotFound} />
 			</Switch>
+			<ToastContainer
+				autoClose={3000}
+				hideProgressBar
+			/>
 		</div>
 	);
 }

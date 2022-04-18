@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import { toast } from 'react-toastify';
 
 import CourseForm from './CourseForm';
 import Spinner from '../common/Spinner';
@@ -20,6 +21,7 @@ function ManageCoursePage({
 }) {
 	const [course, setCourse] = useState({ ...props.course });
 	const [errors, setErrors] = useState({});
+	const [saving, setSaving] = useState(false);
 
 	useEffect(() => {
 		if (courses.length === 0) {
@@ -47,7 +49,9 @@ function ManageCoursePage({
 
 	function handleSave(event) {
 		event.preventDefault();
+		setSaving(true);
 		saveCourse(course).then(() => {
+			toast.success('Course saved.');
 			history.push('/courses');
 		});
 	}
@@ -61,6 +65,7 @@ function ManageCoursePage({
 			errors={errors}
 			onChange={handleChange}
 			onSave={handleSave}
+			saving={saving}
 		/>
 	);
 }
