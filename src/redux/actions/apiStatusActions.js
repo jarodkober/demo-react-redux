@@ -1,4 +1,3 @@
-import { func } from 'prop-types';
 import * as types from './actionTypes';
 
 export function beginApiCall() {
