@@ -10,7 +10,7 @@ import * as authorActions from '../../redux/actions/authorActions';
 import * as courseActions from '../../redux/actions/courseActions';
 import { newCourse } from '../../../tools/mockData';
 
-function ManageCoursePage({
+export function ManageCoursePage({
 	authors,
 	courses,
 	history,
